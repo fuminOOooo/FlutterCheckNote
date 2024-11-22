@@ -20,11 +20,14 @@ class AppComponentState extends State<AppComponent> {
   Widget build(BuildContext context) {
     final materialApp = GetMaterialApp(
       initialRoute: AppPages.INITIAL,
-      defaultTransition: Transition.cupertino,
+      themeMode: ThemeMode.system,
       getPages: AppPages.routes,
-      initialBinding: LaunchBinding(),
+      initialBinding: IntroBinding(),
       title: Environment.value.appName,
     );
-    return AppProvider(application: widget._application, child: materialApp);
+    final provider =
+        AppProvider(application: widget._application, child: materialApp);
+    WidgetsFlutterBinding.ensureInitialized();
+    return provider;
   }
 }

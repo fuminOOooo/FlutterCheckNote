@@ -8,16 +8,22 @@ class IntroView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-        backgroundColor: Color.fromRGBO(255, 255, 255, 1.0),
+    return Scaffold(
         body: Center(
-          child: Text(
-            "Hello World.\nIntroView",
-            textAlign: TextAlign.center,
-            style: TextStyle(color: Color.fromRGBO(0, 0, 0, 1.0),
-          ),
-        )
-      )
-    );
+            child: Column(
+      mainAxisAlignment: MainAxisAlignment.center,
+      children: [
+        Obx(
+          () => Switch(
+            onChanged: (val) => logic.changeTheme(),
+            value: state.darkMode.value)
+        ),
+        const Text(
+          "Dark Mode",
+          style: TextStyle(fontWeight: FontWeight.bold),
+          textAlign: TextAlign.center,
+        ),
+      ],
+    )));
   }
 }

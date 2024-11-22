@@ -1,3 +1,4 @@
+import 'package:checknote/shared/constants/custom_color.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

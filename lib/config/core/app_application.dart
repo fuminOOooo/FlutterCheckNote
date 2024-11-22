@@ -3,13 +3,9 @@ part of 'app.dart';
 class AppApplication implements Application {
 
   @override
-  void onCreate() {
-
-  }
+  void onCreate() {}
 
   @override
-  void onTerminate() {
+  void onTerminate() {}
 
-  }
-  
 }
