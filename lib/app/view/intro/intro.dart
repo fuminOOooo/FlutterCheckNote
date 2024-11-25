@@ -1,5 +1,5 @@
-import 'package:checknote/shared/constants/custom_color.dart';
-import 'package:checknote/shared/constants/storage_constant.dart';
+import 'package:checknote/shared/constants/string_constant.dart';
+import 'package:checknote/shared/widget/widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:shared_preferences/shared_preferences.dart';

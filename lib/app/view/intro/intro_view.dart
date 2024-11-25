@@ -3,27 +3,25 @@ part of 'intro.dart';
 class IntroView extends StatelessWidget {
   static const String PATH = '/';
 
-  final IntroLogic logic = Get.find<IntroLogic>();
-  final IntroState state = Get.find<IntroLogic>().state;
+  final IntroLogic _logic = Get.find<IntroLogic>();
+  final IntroState _state = Get.find<IntroLogic>().state;
+
+  initState() {
+    _logic.updateTheme();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        body: Center(
-            child: Column(
-      mainAxisAlignment: MainAxisAlignment.center,
-      children: [
-        Obx(
-          () => Switch(
-            onChanged: (val) => logic.changeTheme(),
-            value: state.darkMode.value)
-        ),
-        const Text(
-          "Dark Mode",
-          style: TextStyle(fontWeight: FontWeight.bold),
-          textAlign: TextAlign.center,
-        ),
-      ],
-    )));
+    return BaseView(children: [
+      Obx(() => Switch(
+        value: _state.darkMode.value == ThemeMode.dark,
+        onChanged: (val) => _logic.updateTheme(),
+      )),
+      const Text(
+        StringConstant.darkModeText,
+        style: TextStyle(fontWeight: FontWeight.bold),
+        textAlign: TextAlign.center,
+      ),
+    ]);
   }
 }

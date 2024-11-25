@@ -2,7 +2,8 @@ part of 'app.dart';
 
 class AppComponent extends StatefulWidget {
   final AppApplication _application;
-  const AppComponent(this._application, {super.key});
+  final ThemeMode _theme;
+  const AppComponent(this._application, this._theme, {super.key});
   @override
   State createState() {
     return AppComponentState();
@@ -20,7 +21,10 @@ class AppComponentState extends State<AppComponent> {
   Widget build(BuildContext context) {
     final materialApp = GetMaterialApp(
       initialRoute: AppPages.INITIAL,
-      themeMode: ThemeMode.system,
+      theme: CustomTheme.lightTheme,
+      themeMode: widget._theme,
+      defaultTransition: Transition.cupertino,
+      darkTheme: CustomTheme.darkTheme,
       getPages: AppPages.routes,
       initialBinding: IntroBinding(),
       title: Environment.value.appName,

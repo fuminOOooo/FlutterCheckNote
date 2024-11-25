@@ -13,7 +13,9 @@ class Environment {
     WidgetsFlutterBinding.ensureInitialized();
     await DependencyInjection.init();
     var application = AppApplication();
-    application.onCreate();
-    runApp(AppComponent(application));
+    final theme = application.getThemeOnCreate();
+    runApp(AppComponent(
+      application, theme
+    ));
   }
 }

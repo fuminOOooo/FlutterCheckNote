@@ -2,7 +2,6 @@ part of 'intro.dart';
 
 class IntroState {
   IntroState();
-  var darkMode = Get.isDarkMode.obs;
-  var appearance = Get.theme.obs;
+  Rx<ThemeMode> darkMode = ThemeMode.system.obs;
   var str = ''.obs;
 }

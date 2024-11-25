@@ -1,5 +1,5 @@
 import 'package:checknote/config/environment.dart';
-import 'package:flutter/material.dart';
+import 'package:checknote/shared/constants/string_constant.dart';
 
 void main() async {
   Production();
@@ -7,5 +7,6 @@ void main() async {
 
 class Production extends Environment {
   @override
-  final String appName = "CheckNote";
+  // ignore: overridden_fields
+  final String appName = StringConstant.appName;
 }
