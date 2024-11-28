@@ -1,0 +1,9 @@
+import 'package:checknote/shared/widget/widget.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import '../../../shared/constants/string_constant.dart';
+part 'check_view.dart';
+part 'check_logic.dart';
+part 'check_state.dart';
+part 'check_binding.dart';

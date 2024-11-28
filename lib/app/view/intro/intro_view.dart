@@ -1,23 +1,23 @@
 part of 'intro.dart';
 
 class IntroView extends StatelessWidget {
-  static const String PATH = '/';
+  // ignore: constant_identifier_names
+  static const String PATH = StringConstant.introViewPath;
   final IntroLogic _logic = Get.find<IntroLogic>();
   final IntroState _state = Get.find<IntroLogic>().state;
   final size = Get.mediaQuery.size;
-
   IntroView({super.key});
-
   initState() {
     _state.darkMode.value = ThemeMode.system;
   }
-
   _checkButton() {
     return SizedBox(
         width: size.width,
         child: OutlinedButton(
             style: CustomButtonStyle.outlinedButtonStyle,
-            onPressed: () => {},
+            onPressed: () => {
+              Get.toNamed(CheckView.PATH)
+            },
             child: Stack(
               alignment: Alignment.center,
               children: [
@@ -32,7 +32,6 @@ class IntroView extends StatelessWidget {
               ],
             )));
   }
-
   _noteButton() {
     return SizedBox(
         width: size.width,
@@ -53,7 +52,6 @@ class IntroView extends StatelessWidget {
               ],
             )));
   }
-
   @override
   Widget build(BuildContext context) {
     return BaseView(children: [

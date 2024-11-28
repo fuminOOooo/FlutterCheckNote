@@ -1,3 +1,4 @@
+import 'package:checknote/app/view/check/check.dart';
 import 'package:checknote/config/environment.dart';
 import 'package:checknote/shared/constants/custom_theme.dart';
 import 'package:checknote/shared/constants/string_constant.dart';
