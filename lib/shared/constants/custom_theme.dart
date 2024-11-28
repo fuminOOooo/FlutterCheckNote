@@ -6,7 +6,7 @@ class CustomTheme {
 static ThemeData lightTheme = ThemeData(
     appBarTheme: AppBarTheme(
       backgroundColor: CustomColor.white,
-      titleTextStyle: CustomTextStyle.appTitle
+      titleTextStyle: CustomTextStyle.appTitleLight
     ),
     scaffoldBackgroundColor: CustomColor.white,
     useMaterial3: true,
@@ -26,7 +26,7 @@ static ThemeData lightTheme = ThemeData(
   static ThemeData darkTheme = ThemeData(
     appBarTheme: AppBarTheme(
       backgroundColor: CustomColor.black,
-      titleTextStyle: CustomTextStyle.appTitle
+      titleTextStyle: CustomTextStyle.appTitleDark
     ),
     scaffoldBackgroundColor: CustomColor.black,
     useMaterial3: true,

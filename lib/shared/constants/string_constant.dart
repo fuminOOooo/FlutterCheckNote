@@ -14,4 +14,6 @@ class StringConstant {
   // Widget Related
   static const drawerAuthOption = "Login / Register";
   static const drawerSettingsOption = "Settings";
+  static const checkTitle = "Check";
+  static const noteTitle = "Note";
 }

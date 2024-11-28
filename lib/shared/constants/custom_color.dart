@@ -4,6 +4,7 @@ class CustomColor {
   static Color white = Colors.white;
   static Color black = Colors.black;
   static Color red = Colors.red;
+  static Color transparent = Colors.transparent;
   static Color customGray = fromHex(hex: '#7D7983');
   static List<Color> appGradient = [
     fromHex(hex: "#7B92AD"),

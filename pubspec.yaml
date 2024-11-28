@@ -2,7 +2,6 @@ name: checknote
 description: "A new Flutter project."
 publish_to: 'none'
 version: 1.0.0+1
-
 environment:
   sdk: ^3.5.4
 
@@ -18,6 +17,9 @@ dev_dependencies:
     sdk: flutter
   flutter_lints: ^4.0.0
 flutter:
+  assets:
+    - assets/CheckButton.png
+    - assets/NoteButton.png
   uses-material-design: true
 
   # To add assets to your application, add an assets section, like this:

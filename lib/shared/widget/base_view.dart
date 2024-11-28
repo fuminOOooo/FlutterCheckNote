@@ -6,15 +6,8 @@ class BaseView extends StatelessWidget {
   final List<Widget> children;
   BaseView({super.key, required this.children});
 
-  _appTitle() {
-    return Text(
-      StringConstant.appName,
-      style: CustomTextStyle.appTitle,
-    );
-  }
-
   _baseAppBar() {
-    return AppBar(title: _appTitle());
+    return AppBar(title: const AppTitle());
   }
 
   _gradient() {
@@ -30,7 +23,7 @@ class BaseView extends StatelessWidget {
         decoration: BoxDecoration(gradient: _gradient()),
         child: CustomPadding.topPadding(
             child: CustomPadding.horizontalPadding(
-                child: _appTitle(),
+                child: const AppTitle(),
                 value: NumberConstant.horizontalDrawerHeaderPadding),
             value: NumberConstant.topDrawerHeaderPadding));
   }
@@ -41,7 +34,7 @@ class BaseView extends StatelessWidget {
         child: CustomPadding.horizontalPadding(
           child: const Text(
             StringConstant.drawerAuthOption,
-            style: CustomTextStyle.interactableText,
+            style: CustomTextStyle.interactableBodyText,
           )));
   }
 
@@ -51,7 +44,7 @@ class BaseView extends StatelessWidget {
       child: CustomPadding.horizontalPadding(
         child: const Text(
           StringConstant.drawerSettingsOption,
-          style: CustomTextStyle.interactableText,
+          style: CustomTextStyle.interactableBodyText,
         )));
   }
 
