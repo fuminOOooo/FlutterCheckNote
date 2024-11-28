@@ -9,13 +9,13 @@ class LaunchView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-      backgroundColor: Color.fromRGBO(255, 255, 255, 1.0),
-      body: Stack(
+    return Scaffold(
+      backgroundColor: CustomColor.white,
+      body: const Stack(
         children: [
           Column(
             children: [
-              Text("Hello World.")
+              Text("Hello World.\nLaunch View")
             ],
           ),
         ],

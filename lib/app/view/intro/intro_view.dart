@@ -2,22 +2,73 @@ part of 'intro.dart';
 
 class IntroView extends StatelessWidget {
   static const String PATH = '/';
+  final IntroLogic _logic = Get.find<IntroLogic>();
+  final IntroState _state = Get.find<IntroLogic>().state;
+  final size = Get.mediaQuery.size;
 
-  final IntroLogic logic = Get.find<IntroLogic>();
-  final IntroState state = Get.find<IntroLogic>().state;
+  IntroView({super.key});
+
+  initState() {
+    _state.darkMode.value = ThemeMode.system;
+  }
+
+  _checkButton() {
+    return SizedBox(
+        width: size.width,
+        child: OutlinedButton(
+            style: CustomButtonStyle.outlinedButtonStyle,
+            onPressed: () => {},
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Obx(() => Opacity(
+                    opacity: (_state.darkMode.value == ThemeMode.dark)
+                        ? NumberConstant.darkenOpacity
+                        : NumberConstant.fullOpacity,
+                    child: CustomPadding.defaultPadding(
+                        child: ImageAsset.checkButton))),
+                Text(StringConstant.checkTitle,
+                    style: CustomTextStyle.checkButtonStyle)
+              ],
+            )));
+  }
+
+  _noteButton() {
+    return SizedBox(
+        width: size.width,
+        child: OutlinedButton(
+            style: CustomButtonStyle.outlinedButtonStyle,
+            onPressed: () => {},
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Obx(() => Opacity(
+                    opacity: (_state.darkMode.value == ThemeMode.dark)
+                        ? NumberConstant.darkenOpacity
+                        : NumberConstant.fullOpacity,
+                    child: CustomPadding.defaultPadding(
+                        child: ImageAsset.noteButton))),
+                Text(StringConstant.noteTitle,
+                    style: CustomTextStyle.noteButtonStyle)
+              ],
+            )));
+  }
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
-        backgroundColor: Color.fromRGBO(255, 255, 255, 1.0),
-        body: Center(
-          child: Text(
-            "Hello World.\nIntroView",
-            textAlign: TextAlign.center,
-            style: TextStyle(color: Color.fromRGBO(0, 0, 0, 1.0),
-          ),
-        )
-      )
-    );
+    return BaseView(children: [
+      _checkButton(),
+      _noteButton(),
+      CustomPadding.topPadding(
+          child: Obx(() => Switch(
+                value: _state.darkMode.value == ThemeMode.dark,
+                onChanged: (val) => _logic.updateTheme(),
+              ))),
+      const Text(
+        StringConstant.darkModeText,
+        style: TextStyle(fontWeight: FontWeight.bold),
+        textAlign: TextAlign.center,
+      ),
+    ]);
   }
 }
