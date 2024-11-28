@@ -9,49 +9,49 @@ class IntroView extends StatelessWidget {
   IntroView({super.key});
 
   initState() {
-    _logic.updateTheme();
+    _state.darkMode.value = ThemeMode.system;
   }
 
   _checkButton() {
     return SizedBox(
-      width: size.width,
-      child: ElevatedButton(
-        style: CustomButtonStyle.elevatedButtonStyle,
-        onPressed: () => {},
-        child: Stack(
-          alignment: Alignment.center,
-          children: [
-            Obx(() => Opacity(
-                opacity: (_state.darkMode.value == ThemeMode.dark)
-                    ? NumberConstant.darkenOpacity
-                    : NumberConstant.fullOpacity,
-                child: CustomPadding.defaultPadding(
-                    child: ImageAsset.checkButton))),
-            Text(StringConstant.checkTitle,
-                style: CustomTextStyle.checkButtonStyle)
-          ],
-    )));
+        width: size.width,
+        child: OutlinedButton(
+            style: CustomButtonStyle.outlinedButtonStyle,
+            onPressed: () => {},
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Obx(() => Opacity(
+                    opacity: (_state.darkMode.value == ThemeMode.dark)
+                        ? NumberConstant.darkenOpacity
+                        : NumberConstant.fullOpacity,
+                    child: CustomPadding.defaultPadding(
+                        child: ImageAsset.checkButton))),
+                Text(StringConstant.checkTitle,
+                    style: CustomTextStyle.checkButtonStyle)
+              ],
+            )));
   }
 
   _noteButton() {
     return SizedBox(
-          width: size.width,
-          child: ElevatedButton(
-              style: CustomButtonStyle.elevatedButtonStyle,
-              onPressed: () => {},
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  Obx(() => Opacity(
-                      opacity: (_state.darkMode.value == ThemeMode.dark)
-                          ? NumberConstant.darkenOpacity
-                          : NumberConstant.fullOpacity,
-                      child: CustomPadding.defaultPadding(
-                          child: ImageAsset.noteButton))),
-                  Text(StringConstant.noteTitle,
-                      style: CustomTextStyle.noteButtonStyle)
-                ],
-              )));
+        width: size.width,
+        child: OutlinedButton(
+            style: CustomButtonStyle.outlinedButtonStyle,
+            onPressed: () => {},
+            child: Stack(
+              alignment: Alignment.center,
+              children: [
+                Obx(() => Opacity(
+                    opacity: (_state.darkMode.value == ThemeMode.dark)
+                        ? NumberConstant.darkenOpacity
+                        : NumberConstant.fullOpacity,
+                    child: CustomPadding.defaultPadding(
+                        child: ImageAsset.noteButton))),
+                Text(StringConstant.noteTitle,
+                    style: CustomTextStyle.noteButtonStyle)
+              ],
+            )));
   }
 
   @override

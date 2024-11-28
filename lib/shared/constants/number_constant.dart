@@ -7,6 +7,6 @@ class NumberConstant {
   static const noteButton = 80.0;
   static const interactableBodyTextFontSize = 18.0;
   static const fullOpacity = 1.0;
-  static const darkenOpacity = 0.6;
+  static const darkenOpacity = 0.65;
   static const appGradientStops = [0.35, 0.81];
 }
