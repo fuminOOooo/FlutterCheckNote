@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "548510582216",
+    "project_id": "checknote-53dcc",
+    "storage_bucket": "checknote-53dcc.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:548510582216:android:b8e0e637f97bd2f28d2cfd",
+        "android_client_info": {
+          "package_name": "com.example.checknote"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDDf5S7inx8ng9lO7XRVXEOAqK4YyClpv4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
